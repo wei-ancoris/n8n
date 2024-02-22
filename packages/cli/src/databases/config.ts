@@ -55,6 +55,7 @@ const getSqliteConnectionOptions = (): SqliteConnectionOptions => ({
 		config.getEnv('database.sqlite.database'),
 	),
 	enableWAL: config.getEnv('database.sqlite.enableWAL'),
+	poolSize: config.getEnv('database.sqlite.poolSize'),
 	migrations: sqliteMigrations,
 });
 

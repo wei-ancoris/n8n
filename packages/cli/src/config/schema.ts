@@ -173,8 +173,14 @@ export const schema = {
 			enableWAL: {
 				doc: 'Enable SQLite WAL mode',
 				format: Boolean,
-				default: false,
+				default: true,
 				env: 'DB_SQLITE_ENABLE_WAL',
+			},
+			poolSize: {
+				doc: 'SQLite Pool Size',
+				format: Number,
+				default: 2,
+				env: 'DB_SQLITE_POOL_SIZE',
 			},
 			executeVacuumOnStartup: {
 				doc: 'Runs VACUUM operation on startup to rebuild the database. Reduces filesize and optimizes indexes. WARNING: This is a long running blocking operation. Will increase start-up time.',

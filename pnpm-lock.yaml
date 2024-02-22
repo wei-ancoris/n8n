@@ -198,8 +198,8 @@ importers:
         specifier: 0.0.6
         version: 0.0.6
       '@n8n/typeorm':
-        specifier: 0.3.20-3
-        version: 0.3.20-3(mssql@9.1.1)(pg@8.11.3)(redis@4.6.12)(sqlite3@5.1.7)
+        specifier: 0.3.20-sqlite.poolSize.1
+        version: 0.3.20-sqlite.poolSize.1(mssql@9.1.1)(pg@8.11.3)(redis@4.6.12)(sqlite3@5.1.7)
       '@n8n/vm2':
         specifier: 3.9.20
         version: 3.9.20
@@ -378,8 +378,8 @@ importers:
         specifier: workspace:*
         version: link:../@n8n/permissions
       '@n8n/typeorm':
-        specifier: 0.3.20-3
-        version: 0.3.20-3(@sentry/node@7.87.0)(ioredis@5.3.2)(mysql2@2.3.3)(pg@8.11.3)(sqlite3@5.1.7)
+        specifier: 0.3.20-sqlite.poolSize.1
+        version: 0.3.20-sqlite.poolSize.1(@sentry/node@7.87.0)(ioredis@5.3.2)(mysql2@2.3.3)(pg@8.11.3)(sqlite3@5.1.7)
       '@n8n_io/license-sdk':
         specifier: 2.10.0
         version: 2.10.0
@@ -5717,8 +5717,8 @@ packages:
       recast: 0.22.0
     dev: false
 
-  /@n8n/typeorm@0.3.20-3(@sentry/node@7.87.0)(ioredis@5.3.2)(mysql2@2.3.3)(pg@8.11.3)(sqlite3@5.1.7):
-    resolution: {integrity: sha512-eTaEBvaJZZCStqiLKSUIvFLMZJ3WMOFc+pnF+jedcQOc6AunWM57FqhPvnuB/Z6c67JmgIyINlnjbLDHtPgKZQ==}
+  /@n8n/typeorm@0.3.20-sqlite.poolSize.1(@sentry/node@7.87.0)(ioredis@5.3.2)(mysql2@2.3.3)(pg@8.11.3)(sqlite3@5.1.7):
+    resolution: {integrity: sha512-9DpiPqjtpriMHcT4zkJtCDqnH3Jfp3Vsd9NWjCg9GSl+JHIK9Rl8qW5Im2chsTW5d1ugN70/ySoEdZI2XRHIlQ==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     peerDependencies:
@@ -5797,6 +5797,7 @@ packages:
       reflect-metadata: 0.2.1
       sha.js: 2.4.11
       sqlite3: 5.1.7
+      tarn: 3.0.2
       tslib: 2.6.1
       uuid: 9.0.0
       yargs: 17.7.2
@@ -5804,8 +5805,8 @@ packages:
       - supports-color
     dev: false
 
-  /@n8n/typeorm@0.3.20-3(mssql@9.1.1)(pg@8.11.3)(redis@4.6.12)(sqlite3@5.1.7):
-    resolution: {integrity: sha512-eTaEBvaJZZCStqiLKSUIvFLMZJ3WMOFc+pnF+jedcQOc6AunWM57FqhPvnuB/Z6c67JmgIyINlnjbLDHtPgKZQ==}
+  /@n8n/typeorm@0.3.20-sqlite.poolSize.1(mssql@9.1.1)(pg@8.11.3)(redis@4.6.12)(sqlite3@5.1.7):
+    resolution: {integrity: sha512-9DpiPqjtpriMHcT4zkJtCDqnH3Jfp3Vsd9NWjCg9GSl+JHIK9Rl8qW5Im2chsTW5d1ugN70/ySoEdZI2XRHIlQ==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     peerDependencies:
@@ -5883,6 +5884,7 @@ packages:
       reflect-metadata: 0.2.1
       sha.js: 2.4.11
       sqlite3: 5.1.7
+      tarn: 3.0.2
       tslib: 2.6.1
       uuid: 9.0.0
       yargs: 17.7.2
