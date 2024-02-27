@@ -100,5 +100,8 @@
       "pyodide@0.23.4": "patches/pyodide@0.23.4.patch",
       "@types/ws@8.5.4": "patches/@types__ws@8.5.4.patch"
     }
+  },
+  "resolutions": {
+    "@langchain/core": "0.1.5"
   }
 }

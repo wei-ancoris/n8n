@@ -133,6 +133,18 @@ export function hasSharing(
 }
 
 // ----------------------------------
+//          /ai
+// ----------------------------------
+
+export declare namespace AIRequest {
+	export type DebugError = AuthenticatedRequest<{}, {}, AIDebugErrorPayload>;
+}
+
+export interface AIDebugErrorPayload {
+	error: Error;
+}
+
+// ----------------------------------
 //          /credentials
 // ----------------------------------
 

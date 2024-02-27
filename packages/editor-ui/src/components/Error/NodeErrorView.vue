@@ -14,7 +14,14 @@
 		</div>
 		<div v-else>
 			<div class="node-error-view__header">
-				<div class="node-error-view__header-message" v-text="getErrorMessage()" />
+				<div class="node-error-view__header-message">
+					<div :class="isErrorDebuggingEnabled ? 'mt-4xs' : ''">
+						{{ getErrorMessage() }}
+					</div>
+					<N8nButton v-if="isErrorDebuggingEnabled" type="tertiary" @click="onDebugError">
+						Ask AI ✨
+					</N8nButton>
+				</div>
 				<div
 					class="node-error-view__header-description"
 					v-if="error.description"
@@ -222,8 +229,10 @@ import { sanitizeHtml } from '@/utils/htmlUtils';
 import { useNDVStore } from '@/stores/ndv.store';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
 import { useRootStore } from '@/stores/n8nRoot.store';
+import { useSettingsStore } from '@/stores/settings.store';
 import { useClipboard } from '@/composables/useClipboard';
 import type { IDataObject } from 'n8n-workflow';
+import { useAIStore } from '@/stores/ai.store';
 
 export default defineComponent({
 	name: 'NodeErrorView',
@@ -237,7 +246,10 @@ export default defineComponent({
 		};
 	},
 	computed: {
-		...mapStores(useNodeTypesStore, useNDVStore, useRootStore),
+		...mapStores(useNodeTypesStore, useNDVStore, useAIStore, useSettingsStore, useRootStore),
+		isErrorDebuggingEnabled(): boolean {
+			return this.aiStore.isErrorDebuggingEnabled;
+		},
 		displayCause(): boolean {
 			return JSON.stringify(this.error.cause).length < MAX_DISPLAY_DATA_SIZE;
 		},
@@ -290,6 +302,9 @@ export default defineComponent({
 		},
 	},
 	methods: {
+		onDebugError() {
+			this.aiStore.debugError(this.error);
+		},
 		nodeVersionTag(nodeType: IDataObject): string {
 			if (!nodeType || nodeType.hidden) {
 				return this.$locale.baseText('nodeSettings.deprecated');
@@ -530,6 +545,10 @@ export default defineComponent({
 	}
 
 	&__header-message {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		gap: var(--spacing-xs);
 		padding: var(--spacing-xs) var(--spacing-s) var(--spacing-3xs) var(--spacing-s);
 		color: var(--color-danger);
 		color: var(--color-danger);

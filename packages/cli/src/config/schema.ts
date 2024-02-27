@@ -1338,6 +1338,12 @@ export const schema = {
 			default: false,
 			env: 'N8N_AI_ENABLED',
 		},
+		openAIApiKey: {
+			doc: 'Enable AI features using OpenAI API key',
+			format: String,
+			default: '',
+			env: 'N8N_AI_OPENAI_API_KEY',
+		},
 	},
 
 	expression: {

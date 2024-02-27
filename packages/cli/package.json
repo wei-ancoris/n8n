@@ -92,6 +92,7 @@
     "ts-essentials": "^7.0.3"
   },
   "dependencies": {
+    "@langchain/openai": "^0.0.14",
     "@n8n/client-oauth2": "workspace:*",
     "@n8n/localtunnel": "2.1.0",
     "@n8n/n8n-nodes-langchain": "workspace:*",
@@ -137,6 +138,7 @@
     "jsonschema": "1.4.1",
     "jsonwebtoken": "9.0.0",
     "jwks-rsa": "3.0.1",
+    "langchain": "0.0.207",
     "ldapts": "4.2.6",
     "lodash": "4.17.21",
     "luxon": "3.3.0",

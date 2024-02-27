@@ -2559,6 +2559,7 @@ export interface IN8nUISettings {
 	};
 	ai: {
 		enabled: boolean;
+		errorDebugging: boolean;
 	};
 	workflowHistory: {
 		pruneTime: number;
